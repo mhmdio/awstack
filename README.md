@@ -8,18 +8,18 @@ This will use Terraform, Packer, Consul and Vault that allow you to provision un
 
 This project will deploy an end to end infrastructure in AWS that includes the below resources in us-east-1:
 
-- Network
--- VPC CIDR = 10.30.0.0/16
--- AZs = us-east-1a,us-east-1c,us-east-1e
--- Public subnets = 10.30.11.0/24,10.30.12.0/24,10.30.13.0/24
--- Private subnets = 10.30.1.0/24,10.30.2.0/24,10.30.3.0/24
--- NAT
--- OpenVPN
--- Bastion host
-- Data
+- ####Network
+- VPC CIDR = 10.30.0.0/16
+- AZs = us-east-1a,us-east-1c,us-east-1e
+- Public subnets = 10.30.11.0/24,10.30.12.0/24,10.30.13.0/24
+- Private subnets = 10.30.1.0/24,10.30.2.0/24,10.30.3.0/24
+- NAT
+- OpenVPN
+- Bastion host
+- ####Data
 -- Consul cluster
 -- Vault HA with Consul backend
-- DNS
+- ####DNS
 
 ### How to run
 - add AWS credentials to set_vars.sh
