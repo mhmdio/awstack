@@ -1,0 +1,9 @@
+name                = "statflow"
+environment         = "us_east_1_dev"
+cidr                = "10.30.0.0/16"
+internal_subnets    = ["10.30.1.0/24" ,"10.30.2.0/24", "10.30.3.0/24"]
+external_subnets    = ["10.30.11.0/24", "10.30.12.0/24", "10.30.13.0/24"]
+availability_zones  = ["us-east-1a", "us-east-1c", "us-east-1e"]
+region              = "us-east-1"
+domain_name         = "statflow.local"
+key_name            = "statflow-pub-key"
