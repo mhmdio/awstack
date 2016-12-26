@@ -1,63 +1,35 @@
 
-# Defines a user that should be able to write to you test bucket
-resource "aws_iam_user" "test_user" {
-    name = "${var.bucket_user_name}"
-}
-
-resource "aws_iam_access_key" "test_user" {
-    user = "${aws_iam_user.test_user.name}"
-}
-
-resource "aws_iam_user_policy" "test_user_ro" {
-    name = "test"
-    user = "${aws_iam_user.test_user.name}"
-    policy= <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::${var.test_bucket_name}",
-                "arn:aws:s3:::${var.test_bucket_name}/*"
-            ]
-        }
-   ]
-}
-EOF
-}
-
+# Defines a user that should be able to write to your prod bucket
 resource "aws_iam_user" "prod_user" {
-    name = "YOUR_PROD_BUCKET_USER"
+    name = "${var.prod_bucket_user}"
 }
 
 resource "aws_iam_access_key" "prod_user" {
     user = "${aws_iam_user.prod_user.name}"
 }
 
-resource "aws_iam_user_policy" "prod_user_ro" {
-    name = "prod"
+resource "aws_iam_user_policy" "prod_user_rw" {
+    name = "prod_user_policy"
     user = "${aws_iam_user.prod_user.name}"
-   policy= <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::YOUR_PROD_BUCKET_NAME",
-                "arn:aws:s3:::YOUR_PROD_BUCKET_NAME/*"
-            ]
-        }
-   ]
+    policy = "${data.template_file.s3-rw.rendered}"
 }
-EOF
+
+resource "aws_iam_user" "dev_user" {
+    name = "${var.dev_bucket_user}"
+}
+
+resource "aws_iam_access_key" "dev_user" {
+    user = "${aws_iam_user.dev_user.name}"
+}
+
+resource "aws_iam_user_policy" "dev_user_ro" {
+    name = "dev_user_policy"
+    user = "${aws_iam_user.dev_user.name}"
+    policy = "${data.template_file.s3-ro.rendered}"
 }
 
 resource "aws_s3_bucket" "prod_bucket" {
-    bucket = "YOUR_PROD_BUCKET_NAME"
+    bucket = "${var.prod_bucket_name}"
     acl = "public-read"
 
     cors_rule {
@@ -68,38 +40,11 @@ resource "aws_s3_bucket" "prod_bucket" {
         max_age_seconds = 3000
     }
 
-    policy = <<EOF
-{
-    "Version": "2008-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadForGetBucketObjects",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::YOUR_PROD_BUCKET_NAME/*"
-        },
-        {
-            "Sid": "",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "${aws_iam_user.prod_user.arn}"
-            },
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::YOUR_PROD_BUCKET_NAME",
-                "arn:aws:s3:::YOUR_PROD_BUCKET_NAME/*"
-            ]
-        }
-    ]
-}
-EOF
+    policy = "${data.template_file.s3-prod-bucket.rendered}"
 }
 
-resource "aws_s3_bucket" "test_bucket" {
-    bucket = "YOUR_TEST_BUCKET_NAME"
+resource "aws_s3_bucket" "dev_bucket" {
+    bucket = "${var.dev_bucket_name}"
     acl = "public-read"
 
     cors_rule {
@@ -110,32 +55,5 @@ resource "aws_s3_bucket" "test_bucket" {
         max_age_seconds = 3000
     }
 
-    policy = <<EOF
-{
-    "Version": "2008-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadForGetTestBucketObjects",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "*"
-            },
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::YOUR_TEST_BUCKET_NAME/*"
-        },
-        {
-            "Sid": "",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "${aws_iam_user.test_user.arn}"
-            },
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::YOUR_TEST_BUCKET_NAME",
-                "arn:aws:s3:::YOUR_TEST_BUCKET_NAME/*"
-            ]
-        }
-    ]
-}
-EOF
+    policy = "${data.template_file.s3-dev-bucket.rendered}"
 }

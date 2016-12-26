@@ -1,9 +1,9 @@
-aws_region = "my-aws_region-value"
-
+/*aws_region = "my-aws_region-value"
 aws_access_key = "my-aws_access_key-value"
-aws_secret_key = "my-aws_secret_key-value"
+aws_secret_key = "my-aws_secret_key-value"*/
 
-prod_bucket_name = "my-prod_bucket_name-value"
-test_bucket_name = "my-test_bucket_name-value"
+prod_bucket_name = "statflow-prod-bucket"
+dev_bucket_name = "statflow-dev-bucket"
 
-bucket_user_name = "statflo_bucket_user"
+prod_bucket_user = "statflow-prod"
+dev_bucket_user = "statflow-dev"

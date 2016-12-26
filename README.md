@@ -2,10 +2,9 @@
 
 ### Getting Started
 
-This repository contains best-practice infrastructures fow AWS  with different, regions, environments, and operating systems.
+This repository contains best-practices infrastructure for AWS  with different, regions, environments, and operating systems.
 
 This will use Terraform, Packer, Consul and Vault that allow you to provision unique AWS infrastructures.
-
 This project will deploy an end to end infrastructure in AWS that includes the below resources in us-east-1:
 
 - #### Network
@@ -27,6 +26,3 @@ This project will deploy an end to end infrastructure in AWS that includes the b
 - cd into environment you prefer; edit variables in terraform.tfvars if needed
 - run: terrafrom get; terraform plan;
 - run: terrafrom apply
-
-
-
