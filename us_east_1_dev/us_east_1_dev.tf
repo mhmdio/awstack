@@ -300,9 +300,9 @@ module "vpc" {
 # }
 
 # // The VPC ID.
-# output "vpc_id" {
-#   value = "${module.vpc.id}"
-# }
+output "vpc_id" {
+  value = "${module.vpc.id}"
+}
 
 # // The default ECS cluster security group ID.
 # output "ecs_cluster_security_group_id" {
