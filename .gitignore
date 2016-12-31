@@ -1,11 +1,11 @@
 .gitignore
-.aws/*
-test/*
 account.json
 .terraform
 *tfstate*
+setup/set_vars.sh
+setup/other/*
+setup/.aws
 setup/*
-other/*
 crash.log
 dist
 *.zip
@@ -17,3 +17,4 @@ logs
 *.pub
 *.pem
 *.swp
+awstack/*
