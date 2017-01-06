@@ -1,4 +1,4 @@
-# Best Practices AWS Ops
+# Best Practices AWS Ops without HC Atlas
 
 ## Getting Started
 
@@ -19,12 +19,10 @@ This project will deploy an end to end infrastructure in AWS that includes the b
 - Bastion host
 - 3 nodes Consul cluster
 - 2 nodes Vault HA with Consul backend
-- DNS ( not yet implemented )
 
 ## How to run
-- add AWS credentials to set_vars.sh
-- run: . ../setup/set_vars.sh
-- generate keys and cert from setup folder
-- cd into environment you prefer; edit variables in terraform.tfvars if needed
-- run: terrafrom get; terraform plan;
-- run: terrafrom apply
+- add AWS credentials to set_vars.sh and run it
+- generate Certs and Keys using gen_cert.sh and gen_key.sh
+- (optional) run vagrant.sh test packer templates
+- run packer.sh to generate AMIs
+- run terraform.sh to deploy AWS infrastructure

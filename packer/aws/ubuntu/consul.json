@@ -4,7 +4,6 @@
     "aws_secret_key":  "{{env `AWS_SECRET_ACCESS_KEY`}}",
     "aws_region":      "{{env `AWS_DEFAULT_REGION`}}",
     "base_ami":        "{{env `ATLAS_BASE_ARTIFACT_AMAZON_IMAGE_ID`}}",
-    "atlas_username":  "{{env `ATLAS_USERNAME`}}",
     "name":            "aws-{{env `AWS_DEFAULT_REGION`}}-ubuntu-consul",
     "ssh_username":    "ubuntu",
     "scripts_dir":     "scripts/ubuntu",

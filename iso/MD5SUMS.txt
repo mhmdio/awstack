@@ -1,0 +1,22 @@
+807fa1f246b719d28d0b362fd2f31855 *ubuntu-14.04.4-desktop-amd64.iso
+51b53fa15c0b89948bbaba311d64a962 *ubuntu-14.04.4-desktop-i386.iso
+2ac1f3e0de626e54d05065d6f549fa3a *ubuntu-14.04.4-server-amd64.iso
+29c5c14450976fb1941e147382a559f5 *ubuntu-14.04.4-server-i386.iso
+0abc200fd4b84a1e8881287d70dfb822 *ubuntu-14.04.5-desktop-amd64.iso
+22616fb5b597deb059d18606e7ad78bb *ubuntu-14.04.5-desktop-i386.iso
+dd54dc8cfc2a655053d19813c2f9aa9f *ubuntu-14.04.5-server-amd64.iso
+812ac191b8898b33aed4aef9ab066b5a *ubuntu-14.04.5-server-i386.iso
+b31731ea6cdbebe1d02f8193db420886 *wubi.exe
+-------------------------------------------------------------------
+c94d54942a2954cf852884d656224186 *ubuntu-16.04-desktop-amd64.iso
+610c4a399df39a78866f9236b8c658da *ubuntu-16.04-desktop-i386.iso
+23e97cd5d4145d4105fbf29878534049 *ubuntu-16.04-server-amd64.img
+23e97cd5d4145d4105fbf29878534049 *ubuntu-16.04-server-amd64.iso
+494c03028524dff2de5c41a800674692 *ubuntu-16.04-server-i386.img
+494c03028524dff2de5c41a800674692 *ubuntu-16.04-server-i386.iso
+17643c29e3c4609818f26becf76d29a3 *ubuntu-16.04.1-desktop-amd64.iso
+9e4e30c37c99b4e029b4bfc2ee93eec2 *ubuntu-16.04.1-desktop-i386.iso
+d2d939ca0e65816790375f6826e4032f *ubuntu-16.04.1-server-amd64.img
+d2d939ca0e65816790375f6826e4032f *ubuntu-16.04.1-server-amd64.iso
+455206c599c25d6a576ba23ca906741a *ubuntu-16.04.1-server-i386.img
+455206c599c25d6a576ba23ca906741a *ubuntu-16.04.1-server-i386.iso
