@@ -5,7 +5,6 @@ account.json
 setup/set_vars.sh
 setup/other/*
 setup/.aws
-setup/*
 crash.log
 dist
 *.zip
@@ -17,5 +16,5 @@ logs
 *.pub
 *.pem
 *.swp
-awstack/*
-iso/ub*
+local/iso/ub*
+local/boxes/ub*
